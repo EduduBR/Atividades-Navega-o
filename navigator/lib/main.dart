@@ -1,25 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:navigator/Acervo/Class_Color.dart';
-import 'package:navigator/Widget/SiderBar.dart';
-import 'package:sidebarx/sidebarx.dart';
+import 'UI/HomePage.dart';
+import 'UI/New_Activities.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatefulWidget {
+  const App({super.key});
 
+  @override
+  State<App> createState() => _AppState();
+}
+
+final homecontroller = PageController();
+
+class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Row(
-          children: const [
-            SiderBar(),
-            
-          ],
-        ),
+        body: PageView(
+            controller: homecontroller,
+            children: const [HomePage(),NewTask()]),
       ),
     );
   }
