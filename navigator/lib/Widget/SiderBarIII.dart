@@ -1,31 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:navigator/ViewModel/Model.dart';
 import 'package:sidebarx/sidebarx.dart';
 import '../Acervo/Class_Color.dart';
-import '../UI/HomePage.dart';
+import '../ViewModel/Model.dart';
 
-class SiderBar extends StatelessWidget {
-  const SiderBar({super.key});
+class SideBarIII extends StatelessWidget {
+  const SideBarIII({super.key});
 
   @override
   Widget build(BuildContext context) {
     final work = ViewModel();
     return SidebarX(
       showToggleButton: false,
-      headerDivider: const Spacer(),
       footerDivider: const Spacer(),
       theme: SidebarXTheme(
           width: 64,
-          iconTheme: IconThemeData(color: Colors.white.withOpacity(0.5)),
-          selectedIconTheme: const IconThemeData(color: Colors.white),
+          selectedIconTheme: const IconThemeData(color: Colors.white, size: 40),
           decoration: BoxDecoration(color: MyColors.basePurple)),
       controller: SidebarXController(selectedIndex: 0),
-      items:  [
+      items: [
         SidebarXItem(
-          icon: Icons.home,
-          onTap: () => work.back(controller),
+          icon: Icons.arrow_back,
+          onTap: () {
+            work.backII();
+          },
         ),
-        SidebarXItem(icon: Icons.info,onTap: () => work.next(controller),),
       ],
     );
   }

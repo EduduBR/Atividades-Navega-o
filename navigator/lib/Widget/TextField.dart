@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:navigator/Acervo/Class_Color.dart';
 
 class Box extends StatelessWidget {
-  // ignore: prefer_typing_uninitialized_variables
-  final controlador;
+  final TextEditingController controlador;
   String label;
-
   Box(this.controlador, this.label, {super.key});
 
   @override

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:navigator/ViewModel/Model.dart';
 
-import '../../Acervo/Class_Color.dart';
-import '../../main.dart';
+import '../Acervo/Class_Color.dart';
+import '../main.dart';
 
 class CancelButton extends StatelessWidget {
   const CancelButton({super.key});

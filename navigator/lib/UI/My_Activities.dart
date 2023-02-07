@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-
 import 'package:navigator/Widget/ListView.dart';
-
+import 'package:navigator/Widget/ConfirmDelete.dart';
 import '../Acervo/Class_Color.dart';
 import '../ViewModel/Model.dart';
-import '../Widget/Button/AddButton.dart';
+import '../Button/AddButton.dart';
 
 class MyActivities extends StatefulWidget {
   const MyActivities({super.key});
@@ -20,12 +19,15 @@ class _MyActivitiesState extends State<MyActivities> {
     return MaterialApp(
       home: Scaffold(
         body: Container(
-          margin: const EdgeInsets.fromLTRB(30,40,30,10),
+          margin: const EdgeInsets.fromLTRB(30, 40, 30, 10),
           child: Column(
             children: [
               Row(
                 children: [
-                  const Text('Minhas atividades', style: TextStyle(fontSize: 40)),
+                  const Text(
+                    'Minhas atividades',
+                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                  ),
                   const Spacer(),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -37,58 +39,18 @@ class _MyActivitiesState extends State<MyActivities> {
                           showDialog(
                             context: context,
                             builder: (context) {
-                              return AlertDialog(
-                                content: Column(
-                                  children: [
-                                    const Text('Excluir as atividades?'),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 30),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Container(
-                                            width: 110,
-                                            height: 50,
-                                            decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                                border: Border.all(
-                                                    color: Colors.black)),
-                                            child: GestureDetector(
-                                              onTap: () {
-                                                work.cancel(context);
-                                              },
-                                              child: const Center(
-                                                  child: Text('Cancelar')),
-                                            ),
-                                          ),
-                                          Container(
-                                            width: 110,
-                                            height: 50,
-                                            decoration: BoxDecoration(
-                                              color: MyColors.pink,
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                            ),
-                                            child: GestureDetector(
-                                              onTap: () {
-                                                setState(() {
-                                                  work.cancel(context);
-                                                  work.delete();
-                                                });
-                                              },
-                                              child: const Center(
-                                                  child: Text('Confirmar',
-                                                      style: TextStyle(
-                                                          color:
-                                                              Colors.white))),
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    )
-                                  ],
+                              return ConfirmDelete(
+                                child: GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      work.delete();
+                                      work.cancel(context);
+                                    });
+                                  },
+                                  child: const Center(
+                                      child: Text('Confirmar',
+                                          style:
+                                              TextStyle(color: Colors.white))),
                                 ),
                               );
                             },
@@ -107,11 +69,20 @@ class _MyActivitiesState extends State<MyActivities> {
                       ),
                     ),
                   ),
-                  AddButton()
+                  const AddButton()
                 ],
               ),
-              Expanded(
-                  child: ListTask())
+              Padding(
+                padding: const EdgeInsets.fromLTRB(30, 40, 30, 0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Atividades', style: TextStyle(color: MyColors.grey)),
+                    Text('criadas em:', style: TextStyle(color: MyColors.grey))
+                  ],
+                ),
+              ),
+              Expanded(child: ListViewTask())
             ],
           ),
         ),

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:navigator/Acervo/Class_Color.dart';
 import 'package:navigator/main.dart';
-
-import '../../ViewModel/Model.dart';
+import '../ViewModel/Model.dart';
 
 class AddButton extends StatelessWidget {
   const AddButton({super.key});

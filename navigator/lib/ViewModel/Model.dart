@@ -1,21 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:navigator/Acervo/Class_Color.dart';
 import 'package:navigator/Acervo/Class_Tasks.dart';
 import 'package:navigator/Widget/NullAlert.dart';
 import 'package:navigator/main.dart';
-import 'package:intl/intl.dart';
 import '../UI/New_Activities.dart';
 
 var tasksList = <Tasks>[];
 
-class ViewModel extends ChangeNotifier {
+class ViewModel {
+
+  
   void delete() {
-    for (var i = 0; i < tasksList.length; i++) {
+    for (var i = 0; i <= tasksList.length; i++) {
       if (tasksList[i].status == true) {
         tasksList.removeAt(i);
       }
     }
-    notifyListeners();
+  }
+
+  void addtask() {
+    tasksList.add(Tasks(
+        newtitle.text,
+        '${DateTime.now().day} de ${month[DateTime.now().month - 1]} de ${DateTime.now().year}',
+        newdata.text));
+    back(homecontroller);
+  }
+
+  void nextII() {
+    homecontroller.jumpToPage(2);
+  }
+
+  void backII() {
+    homecontroller.jumpToPage(0);
   }
 
   void next(controller) {
@@ -30,19 +45,8 @@ class ViewModel extends ChangeNotifier {
         duration: const Duration(microseconds: 300), curve: Curves.ease);
   }
 
-  void addtask() {
-    tasksList.add(Tasks(
-        newtitle.text,
-        '${DateTime.now().day} de ${DateFormat("MMMM").format(DateTime.now())} de ${DateTime.now().year}',
-        newdata.text));
-    back(homecontroller);
-    notifyListeners();
-    print(tasksList.length);
-  }
-
   void cancel(context) {
     Navigator.pop(context);
-    notifyListeners();
   }
 
   void process(context) {
@@ -50,11 +54,26 @@ class ViewModel extends ChangeNotifier {
       showDialog(
         context: context,
         builder: (context) {
-          return NullCheck();
+          return const NullCheck();
         },
       );
     } else {
       addtask();
     }
   }
+
+  final month = [
+    'janeiro',
+    'fevereiro',
+    'março',
+    'abril',
+    'maio',
+    'junho',
+    'julho',
+    'agosto',
+    'setembro',
+    'outubro',
+    'novembro',
+    'dezembro',
+  ];
 }

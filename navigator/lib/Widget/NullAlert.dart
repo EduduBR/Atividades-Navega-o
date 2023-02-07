@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../Acervo/Class_Color.dart';
 
 class NullCheck extends StatelessWidget {
@@ -16,7 +15,8 @@ class NullCheck extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(30),
             child: Text('Digite um Titulo\npara sua atividade',
-                style: TextStyle(fontSize: 30)),
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 50),
@@ -31,7 +31,9 @@ class NullCheck extends StatelessWidget {
                   Navigator.pop(context);
                 },
                 child: const Center(
-                    child: Text('Ok', style: TextStyle(fontSize: 30))),
+                    child: Text('Ok',
+                        style: TextStyle(
+                            fontSize: 35, fontWeight: FontWeight.bold))),
               ),
             ),
           )

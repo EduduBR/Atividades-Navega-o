@@ -3,18 +3,9 @@ import 'package:navigator/UI/Info.dart';
 import 'package:navigator/UI/My_Activities.dart';
 import 'package:navigator/Widget/SiderBar.dart';
 
-
-
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-final controller = PageController();
-
-class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -35,3 +26,5 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+final controller = PageController();

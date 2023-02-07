@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-
 import 'package:navigator/Widget/TextField.dart';
-
-import '../Widget/Button/CancelButton.dart';
-import '../Widget/Button/TaskButton.dart';
+import '../Button/CancelButton.dart';
+import '../Button/TaskButton.dart';
 import '../Widget/SiderBarII.dart';
 
-
- final newtitle = TextEditingController();
-    final newdata = TextEditingController();
+final newtitle = TextEditingController();
+final newdata = TextEditingController();
 
 class NewTask extends StatelessWidget {
   const NewTask({super.key});
@@ -43,12 +40,7 @@ class NewTask extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
-                     
-                          CancelButton(),
-                          TaskButton(
-                              )
-                        ],
+                        children: const [CancelButton(), TaskButton()],
                       ),
                     )
                   ],

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../Acervo/Class_Color.dart';
-import '../../ViewModel/Model.dart';
-
-
+import '../Acervo/Class_Color.dart';
+import '../ViewModel/Model.dart';
 
 class TaskButton extends StatelessWidget {
   

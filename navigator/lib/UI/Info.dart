@@ -8,25 +8,26 @@ class Info extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          body: Container(
-        margin: const EdgeInsets.all(30),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Sobre',
-              style: TextStyle(fontSize: 40),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 20),
-              child: Text(
-                MyStrings.info,
-                style: const TextStyle(fontSize: 10),
+        body: Container(
+          margin: const EdgeInsets.all(30),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Sobre',
+                style: TextStyle(fontSize: 40),
               ),
-            )
-          ],
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Text(
+                  MyStrings.info,
+                  style: const TextStyle(fontSize: 10),
+                ),
+              )
+            ],
+          ),
         ),
-      )),
+      ),
     );
   }
 }
