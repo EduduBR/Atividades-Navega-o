@@ -7,7 +7,7 @@ class Description extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp(debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Row(
           children: [
@@ -21,10 +21,13 @@ class Description extends StatelessWidget {
                           fontSize: 40, fontWeight: FontWeight.bold)),
                 ),
                 SizedBox(
-                    width: 350,
-                    child: Text(selectedDescription,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(fontSize: 40)))
+                  width: 350,
+                  child: Text(
+                    selectedDescription,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(fontSize: 40),
+                  ),
+                )
               ]),
             )
           ],

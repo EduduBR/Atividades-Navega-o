@@ -5,18 +5,14 @@ import '../Acervo/Class_Color.dart';
 import '../ViewModel/Model.dart';
 import '../Button/AddButton.dart';
 
-class MyActivities extends StatefulWidget {
+class MyActivities extends StatelessWidget {
   const MyActivities({super.key});
 
-  @override
-  State<MyActivities> createState() => _MyActivitiesState();
-}
-
-class _MyActivitiesState extends State<MyActivities> {
   @override
   Widget build(BuildContext context) {
     final work = ViewModel();
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Container(
           margin: const EdgeInsets.fromLTRB(30, 40, 30, 10),
@@ -40,19 +36,14 @@ class _MyActivitiesState extends State<MyActivities> {
                             context: context,
                             builder: (context) {
                               return ConfirmDelete(
-                                child: GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      work.delete();
-                                      work.cancel(context);
-                                    });
-                                  },
-                                  child: const Center(
-                                      child: Text('Confirmar',
-                                          style:
-                                              TextStyle(color: Colors.white))),
-                                ),
-                              );
+                                  child: GestureDetector(
+                                onTap: () {
+                                  work.delete(context);
+                                },
+                                child: const Center(
+                                    child: Text('Confirmar',
+                                        style: TextStyle(color: Colors.white))),
+                              ));
                             },
                           );
                         },
@@ -77,12 +68,19 @@ class _MyActivitiesState extends State<MyActivities> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Atividades', style: TextStyle(color: MyColors.grey)),
-                    Text('criadas em:', style: TextStyle(color: MyColors.grey))
+                    Text('Atividades',
+                        style: TextStyle(color: MyColors.grey, fontSize: 18)),
+                    Text('criadas em:',
+                        style: TextStyle(color: MyColors.grey, fontSize: 18))
                   ],
                 ),
               ),
-              Expanded(child: ListViewTask())
+              Expanded(
+                  child: AnimatedBuilder(
+                      animation: work,
+                      builder: (context, child) {
+                        return ListViewTask();
+                      }))
             ],
           ),
         ),

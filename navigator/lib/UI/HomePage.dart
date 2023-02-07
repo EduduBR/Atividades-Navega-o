@@ -3,12 +3,15 @@ import 'package:navigator/UI/Info.dart';
 import 'package:navigator/UI/My_Activities.dart';
 import 'package:navigator/Widget/SiderBar.dart';
 
+final controller = PageController();
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Row(
           children: [
@@ -27,4 +30,4 @@ class HomePage extends StatelessWidget {
   }
 }
 
-final controller = PageController();
+

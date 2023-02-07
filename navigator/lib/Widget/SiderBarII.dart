@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:navigator/main.dart';
 import 'package:sidebarx/sidebarx.dart';
 import '../Acervo/Class_Color.dart';
-import '../ViewModel/Model.dart';
+import '../ViewModel/Navegator.dart';
 
 class SiderBarII extends StatelessWidget {
   const SiderBarII({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final work = ViewModel();
+    final navigator = MyNavigator();
     return SidebarX(
       showToggleButton: false,
       footerDivider: const Spacer(),
@@ -22,7 +22,7 @@ class SiderBarII extends StatelessWidget {
         SidebarXItem(
           icon: Icons.arrow_back,
           onTap: () {
-            work.back(homecontroller);
+            navigator.back(homecontroller);
           },
         ),
       ],

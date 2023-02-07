@@ -6,7 +6,7 @@ class Info extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp(debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Container(
           margin: const EdgeInsets.all(30),

@@ -5,4 +5,19 @@ class MyStrings {
       tortor volutpat magna purus, cras. Hac nulla purus eget adipiscing tristique pulvinar quisque sed ut. Eget nunc pellentesque elementum dignissim enim pellentesque lacus, nisi, sit. Feugiat aliquet id tristique nibh purus cras.
       \nAliquam cursus ut nisi, morbi ac. Sagittis commodo amet eget ut vulputate velit. Felis, in vitae curabitur dignissim lorem duis dolor, posuere et. Risus semper quam eget sollicitudin porta nulla interdum vestibulum. Tellus egestas
        scelerisque mauris proin non iaculis velit aliquam, cras. In lectus quis pellentesque turpis tristique venenatis quis quis sit. Viverra odio pretium nam pulvinar velit vitae gravida dui. A ut tincidunt et porta mattis fermentum nunc. Venenatis ac, velit felis eleifend. Consequat purus sed quam lectus nullam velit suscipit ornare cras. Nam id enim vel morbi odio odio.''';
+
+  final List<String> month = [
+    'janeiro',
+    'fevereiro',
+    'março',
+    'abril',
+    'maio',
+    'junho',
+    'julho',
+    'agosto',
+    'setembro',
+    'outubro',
+    'novembro',
+    'dezembro',
+  ];
 }

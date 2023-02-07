@@ -4,8 +4,8 @@ import '../Button/CancelButton.dart';
 import '../Button/TaskButton.dart';
 import '../Widget/SiderBarII.dart';
 
-final newtitle = TextEditingController();
-final newdata = TextEditingController();
+final titleController = TextEditingController();
+final dataController = TextEditingController();
 
 class NewTask extends StatelessWidget {
   const NewTask({super.key});
@@ -13,6 +13,7 @@ class NewTask extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Row(
           children: [
@@ -28,13 +29,13 @@ class NewTask extends StatelessWidget {
                       margin: const EdgeInsets.only(top: 30),
                       width: 350,
                       height: 54,
-                      child: Box(newtitle, ' Nova atividade'),
+                      child: Box(titleController, ' Nova atividade'),
                     ),
                     Container(
                       margin: const EdgeInsets.only(top: 30),
                       width: 350,
                       height: 350,
-                      child: Box(newdata, 'Descrição'),
+                      child: Box(dataController, 'Descrição'),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),

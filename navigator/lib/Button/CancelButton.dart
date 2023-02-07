@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:navigator/ViewModel/Model.dart';
-
 import '../Acervo/Class_Color.dart';
+import '../ViewModel/Navegator.dart';
 import '../main.dart';
 
 class CancelButton extends StatelessWidget {
@@ -9,12 +8,12 @@ class CancelButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final work = ViewModel();
+    final navigator = MyNavigator();
     return SizedBox(
       width: 132,
       height: 23,
       child: ElevatedButton(
-        onPressed: () => work.back(homecontroller),
+        onPressed: () => navigator.back(homecontroller),
         style: ElevatedButton.styleFrom(
             backgroundColor: Colors.white,
             shape: RoundedRectangleBorder(

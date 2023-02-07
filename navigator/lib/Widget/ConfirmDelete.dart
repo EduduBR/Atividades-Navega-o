@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
 import '../Acervo/Class_Color.dart';
-import '../ViewModel/Model.dart';
+import '../ViewModel/Navegator.dart';
 
-class ConfirmDelete extends StatefulWidget {
+class ConfirmDelete extends StatelessWidget {
   final Widget child;
   const ConfirmDelete({super.key, required this.child});
 
   @override
-  State<ConfirmDelete> createState() => _ConfirmDeleteState();
-}
-
-class _ConfirmDeleteState extends State<ConfirmDelete> {
-  @override
   Widget build(BuildContext context) {
-    final work = ViewModel();
+    final navigator = MyNavigator();
     return AlertDialog(
       content: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -36,7 +31,7 @@ class _ConfirmDeleteState extends State<ConfirmDelete> {
                     ),
                     child: GestureDetector(
                       onTap: () {
-                        work.cancel(context);
+                        navigator.alertOff(context);
                       },
                       child: const Center(child: Text('Cancelar')),
                     )),
@@ -48,7 +43,7 @@ class _ConfirmDeleteState extends State<ConfirmDelete> {
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(color: MyColors.pink, width: 4),
                   ),
-                  child: widget.child,
+                  child: child,
                 )
               ],
             ),
